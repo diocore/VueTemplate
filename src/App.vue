@@ -48,9 +48,8 @@
         </v-layout>
       </v-container>
     </v-content>
-    <v-navigation-drawer v-model="right" right temporary fixed></v-navigation-drawer>
     <v-footer color="blue-grey" class="white--text" app>
-      <span>Ninjaa</span>
+      <span>Powered by Ninjaa Studios</span>
       <v-spacer></v-spacer>
       <span>&copy; 2019</span>
     </v-footer>
