@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-toolbar color="blue-grey" dark fixed app clipped-right>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>App</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -9,7 +9,7 @@
         <v-btn flat to="/about">About</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-navigation-drawer v-model="drawer" fixed app>
+    <v-navigation-drawer disable-resize-watcher v-model="drawer" fixed app>
       <v-list dense>
         <v-list-tile>
           <v-list-tile-content>
