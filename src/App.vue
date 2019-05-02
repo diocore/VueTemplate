@@ -78,4 +78,5 @@ export default {
 .v-btn a {
   text-decoration: none !important;
 }
+::-webkit-scrollbar {display:none;}
 </style>
