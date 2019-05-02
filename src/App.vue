@@ -14,9 +14,12 @@
     </v-navigation-drawer>
     <v-toolbar color="blue-grey" dark fixed app clipped-right>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+      <v-toolbar-title>App</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight"></v-toolbar-side-icon>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat to="/">Home</v-btn>
+        <v-btn flat to="/about">About</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" fixed app>
       <v-list dense>
@@ -28,24 +31,20 @@
             <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile >
+        <v-list-tile @click.stop="" to="/">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <router-link to="/">
             <v-list-tile-title>Home</v-list-tile-title>
-            </router-link>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile>
+        <v-list-tile @click.stop="" to="/about">
           <v-list-tile-action>
             <v-icon>info</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <router-link to="/about">
             <v-list-tile-title>About</v-list-tile-title>
-            </router-link>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -101,7 +100,12 @@ export default {
   props: {
     source: String
   },
-  components: {
-  }
+  components: {}
 }
 </script>
+
+<style>
+.v-btn a {
+  text-decoration: none !important;
+}
+</style>
