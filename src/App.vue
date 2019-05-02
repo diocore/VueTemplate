@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="app">
     <v-navigation-drawer v-model="drawerRight" fixed right clipped app>
       <v-list dense>
         <v-list-tile @click.stop="right = !right">
@@ -28,6 +28,26 @@
             <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile >
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <router-link to="/">
+            <v-list-tile-title>Home</v-list-tile-title>
+            </router-link>
+          </v-list-tile-content>
+        </v-list-tile>
+         <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>info</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <router-link to="/about">
+            <v-list-tile-title>About</v-list-tile-title>
+            </router-link>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-navigation-drawer v-model="left" temporary fixed></v-navigation-drawer>
@@ -37,7 +57,7 @@
           <v-flex shrink>
             <v-tooltip right>
               <template v-slot:activator="{ on }">
-                <HelloWorld></HelloWorld>
+                <router-view></router-view>
               </template>
               <span>Source</span>
             </v-tooltip>
@@ -69,7 +89,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   data: () => ({
@@ -82,7 +102,6 @@ export default {
     source: String
   },
   components: {
-    HelloWorld
   }
 }
 </script>
